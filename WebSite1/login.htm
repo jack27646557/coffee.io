@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <style>
+        input[type="submit"]{
+            background: -webkit-linear-gradient(#55acee, #148df9 50%, #55acee);
+            background: linear-gradient(#55acee, #148df9 50%, #55acee);
+            border: 1px solid #0b5394;
+            border-radius: 1000px;
+            padding: 7px 30px;
+            color: #ffffff;
+            display: inline-block;
+            font: normal 400 18px/1 "zenhei", sans-serif;
+            text-align: center;
+            text-shadow: 2px #0b5394;
+            /*border-top:50px solid #000;  */   /*設置並顯示上邊框*/
+        /*border-bottom:none;*/             /*不設置下邊框*/
+       /*border-left:50px solid transparent;*/     /*設置但隱藏左邊框*/
+        /*border-right:50px solid transparent;*/
+            
+        }
+        
+
+        body{
+
+            background-image: url(image/bg.jpg);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body align="center">
+    <pre id="object"></pre>
+    <script type="text/javascript" src="login.js"></script>
+    <img src="image/loginn.png" style="width:400px; height:150px;" />
+  <!--  <font size="20" color="#ffffff"><b>員工登入</b></font>-->
+    <hr />
+    <div>
+        <font size="16"><b>員工編號</b></font><br /><br />
+        <input id="postTitle" style="height:30px; width:250px" type="text" placeholder="輸入編號" /><br /><br />
+        <input id="searchUserInfoBtn" style="height:50px; width:110px" type="submit" onclick="search()" value="登入" />
+    </div>
+    <img src="image/bg100.png" style="width:150px; height:250px; position:fixed; left:80px ;bottom:0px;" />
+</body>
+</html>

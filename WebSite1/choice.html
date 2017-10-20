@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+    <link type="text/css" rel="stylesheet" href="choice.css">
+
+    <script src="choice.js"></script>
+
+
+    <style>
+        button[type="submit"] {
+            background: -webkit-linear-gradient(#55acee, #148df9 50%, #55acee);
+            background: linear-gradient(#55acee, #148df9 50%, #55acee);
+            border: 1px solid #0b5394;
+            border-radius: 1000px;
+            padding: 7px 30px;
+            color: #ffffff;
+            display: inline-block;
+            font: normal 400 18px/1 "zenhei", sans-serif;
+            text-align: center;
+            text-shadow: 2px #0b5394;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+            input[type="checkbox"] + label {
+                display: inline-block;
+                border-radius: 1000px;
+                background: #ccc;
+                padding: 10px 5px;
+                zoom:1.55;
+            }
+
+            input[type="checkbox"]:checked + label {
+                background-color: rosybrown;
+                color: #fff;
+            }
+        input[type="text"]{
+            width:50px;
+            font-size:30px;
+        }
+
+        body {
+            background-image: url(image/bg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        form[id="form1"]{
+            float: left;
+            zoom: 2;
+
+        }        
+    </style>
+</head>
+<body align="center">
+    <img src="image/choice.png" style="width:500px; height:150px;" />
+    <button type="submit" id="comfirm" style="background:#148df9;width:200px;height:60px;font-size:36px;" onclick="check()">確認</button>
+    <button type="submit" id="cancel" style="background:#ff0000;width:200px;height:60px;font-size:36px;" onclick="window.location.href='cellphone.html'">取消</button>
+    <button type="submit" id="refresh" style="background:gray;width:200px;height:60px;font-size:30px;" onclick="window.location.reload()">全部清除</button>
+    <hr />
+    會員：<label id="X"></label><br />
+    <form id="form1">
+        <ul class="drop-down-menu">
+            <li>
+                <a onclick="Coffee(0)"><b>全部</b></a>
+            </li>
+            <li>
+                <a onclick="Coffee(1)"><b>美式</b></a>
+            </li>
+            <li>
+                <a onclick="Coffee(2)"><b>拿鐵</b></a>
+            </li>
+            <li>
+                <a onclick="Coffee(3)"><b>牛奶</b></a>
+            </li>
+            <li>
+                <a onclick="Coffee(4)"><b>其他</b></a>
+            </li>
+        </ul>
+    </form>
+    <table align="center" class="demo" id="mytable">
+    </table>
+    <img src="image/bg100.png" style="width:150px; height:250px; position:fixed; left:80px ;bottom:0px; z-index:-1;" />
+</body>
+</html>

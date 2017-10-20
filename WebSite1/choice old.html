@@ -1,0 +1,267 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+
+    <script src="choice.js"></script>
+
+
+    <style>
+        button[type="submit"] {
+            background: -webkit-linear-gradient(#55acee, #148df9 50%, #55acee);
+            background: linear-gradient(#55acee, #148df9 50%, #55acee);
+            border: 1px solid #0b5394;
+            border-radius: 1000px;
+            padding: 7px 30px;
+            color: #ffffff;
+            display: inline-block;
+            font: normal 400 18px/1 "zenhei", sans-serif;
+            text-align: center;
+            text-shadow: 2px #0b5394;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+            input[type="checkbox"] + label {
+                display: inline-block;
+                border-radius: 1000px;
+                background: #ccc;
+                padding: 10px 5px;
+                zoom:2;
+            }
+
+            input[type="checkbox"]:checked + label {
+                background-color: rosybrown;
+                color: #fff;
+            }
+        input[type="text"]{
+            width:50px;
+            font-size:30px;
+        }
+
+        body {
+            background-image: url(image/bg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body align="center">
+    <img src="image/choice.png" style="width:500px; height:150px;" />
+    <hr />
+    會員：<label id="X"></label><br />
+    <table align="center" class="demo">
+        <tr>
+            <!--熱美式 -->
+      <!--      <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/1.jpg?alt=media&token=8bca23b0-cb71-439b-8788-cba4a47c6b8f" id="pic1" /></td>-->
+        <!--    <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/1.jpg?alt=media&token=8bca23b0-cb71-439b-8788-cba4a47c6b8f" id="pic7" /></td>-->
+        <!--     <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/1.jpg?alt=media&token=8bca23b0-cb71-439b-8788-cba4a47c6b8f" id="pic8" /></td>-->
+            <!--冰美式 -->
+      <!--       <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/2.jpg?alt=media&token=dce10e85-fa1c-40e3-853c-7d2a0031be37" id="pic2" /></td>-->
+        <!--     <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/2.jpg?alt=media&token=dce10e85-fa1c-40e3-853c-7d2a0031be37" id="pic9" /></td>-->
+            <!--熱拿鐵 -->
+     <!--        <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/3.jpg?alt=media&token=5533d2d3-8553-4235-aa9c-f95f4b62a7ec" id="pic3" /></td>-->
+        </tr>
+        <tr>
+
+            <td><input type="checkbox" id="ch1"><label for="ch1">小熱美式</label></td>
+            <td><input type="checkbox" id="ch7"><label for="ch7">中熱美式</label></td>
+            <td><input type="checkbox" id="ch8"><label for="ch8">大熱美式</label></td>
+            <td><input type="checkbox" id="ch2"><label for="ch2">中冰美式</label></td>
+            <td><input type="checkbox" id="ch9"><label for="ch9">大冰美式</label></td>
+            <td><input type="checkbox" id="ch3"><label for="ch3">小熱拿鐵</label></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" id="minus1" style="background:green;" onclick="minus1()">-</button>
+                <input type="text" id="count1" value="0"/>
+                <button type="submit" id="add1" style="background:green;" onclick="add1()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus7" style="background:green;" onclick="minus7()">-</button>
+                <input type="text" id="count7" value="0"/>
+                <button type="submit" id="add7" style="background:green;" onclick="add7()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus8" style="background:green;" onclick="minus8()">-</button>
+                <input type="text" id="count8" value="0"/>
+                <button type="submit" id="add8" style="background:green;" onclick="add8()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus2" style="background:green;" onclick="minus2()">-</button>
+                <input type="text" id="count2" value="0"/>
+                <button type="submit" id="add2" style="background:green;" onclick="add2()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus9" style="background:green;" onclick="minus9()">-</button>
+                <input type="text" id="count9" value="0"/>
+                <button type="submit" id="add9" style="background:green;" onclick="add9()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus3" style="background:green;" onclick="minus3()">-</button>
+                <input type="text" id="count3" value="0"/>
+                <button type="submit" id="add3" style="background:green;" onclick="add3()">+</button>
+            </td>
+        </tr>
+        <tr>
+         <!--    <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/3.jpg?alt=media&token=5533d2d3-8553-4235-aa9c-f95f4b62a7ec" id="pic10" /></td>-->
+          <!--   <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/3.jpg?alt=media&token=5533d2d3-8553-4235-aa9c-f95f4b62a7ec" id="pic11" /></td>-->
+            <!--冰拿鐵 -->
+          <!--   <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/4.jpg?alt=media&token=e25b7fda-3474-4e64-a4c9-5968a9a7cda1" id="pic4" /></td>-->
+          <!--   <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/4.jpg?alt=media&token=e25b7fda-3474-4e64-a4c9-5968a9a7cda1" id="pic12" /></td>-->
+            <!--卡布奇諾-->
+         <!--    <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/5.jpg?alt=media&token=8b64203c-8fce-4726-8918-3989de90449a" id="pic5" /></td>-->
+            <!--黃金椹果-->
+        <!--     <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/6.jpg?alt=media&token=196b7498-ad41-48de-bfbd-980c20187bdf" id="pic6" /></td>-->
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="ch10"><label for="ch10">中熱拿鐵</label></td>
+            <td><input type="checkbox" id="ch11"><label for="ch11">大熱拿鐵</label></td>
+            <td><input type="checkbox" id="ch4"><label for="ch4">中冰拿鐵</label></td>
+            <td><input type="checkbox" id="ch12"><label for="ch12">大冰拿鐵</label></td>
+            <td><input type="checkbox" id="ch5"><label for="ch5">卡布奇諾</label></td>
+            <td><input type="checkbox" id="ch6"><label for="ch6">黃金榛果拿鐵</label></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" id="minus10" style="background:green;" onclick="minus10()">-</button>
+                <input type="text" id="count10" value="0"/>
+                <button type="submit" id="add10" style="background:green;" onclick="add10()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus11" style="background:green;" onclick="minus11()">-</button>
+                <input type="text" id="count11" value="0"/>
+                <button type="submit" id="add11" style="background:green;" onclick="add11()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus4" style="background:green;" onclick="minus4()">-</button>
+                <input type="text" id="count4" value="0"/>
+                <button type="submit" id="add4" style="background:green;" onclick="add4()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus12" style="background:green;" onclick="minus12()">-</button>
+                <input type="text" id="count12" value="0"/>
+                <button type="submit" id="add12" style="background:green;" onclick="add12()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus5" style="background:green;" onclick="minus5()">-</button>
+                <input type="text" id="count5" value="0"/>
+                <button type="submit" id="add5" style="background:green;" onclick="add5()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus6" style="background:green;" onclick="minus6()">-</button>
+                <input type="text" id="count6" value="0"/>
+                <button type="submit" id="add6" style="background:green;" onclick="add6()">+</button>
+            </td>
+        </tr>
+                <!--熱焦糖瑪奇朵 -->
+        <tr>
+         <!--    <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/7.jpg?alt=media&token=f3a1e920-c646-4581-8f20-a4f0aa770971" id="pic13" /></td>-->
+            <!--冰焦糖瑪奇朵 -->
+            <!-- <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/8.jpg?alt=media&token=6267720f-144b-42c8-915a-434ef855a65e" id="pic14" /></td>-->
+            <!--巧克力牛奶 -->
+          <!--   <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/9.jpg?alt=media&token=05a7aff1-7236-4422-a210-52a19c78fd81" id="pic15" /></td>-->
+            <!--熱八女 -->
+           <!--  <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/10.jpg?alt=media&token=abd9069a-e9ed-4955-94a9-8c3e707ecdc9" id="pic16" /></td>-->
+            <!--冰八女 -->
+          <!--   <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/10.jpg?alt=media&token=abd9069a-e9ed-4955-94a9-8c3e707ecdc9" id="pic17" /></td>-->
+            <!--熱北海道 -->
+           <!--  <td><img src="https://firebasestorage.googleapis.com/v0/b/test-bfe7d.appspot.com/o/11.jpg?alt=media&token=6f70b3e8-cbf2-4395-98cc-3cd2e0336989" id="pic18" /></td>-->
+
+        </tr>
+        <tr>
+            <td><input type="checkbox" id="ch13"><label for="ch13">熱焦糖瑪琪朵</label></td>
+            <td><input type="checkbox" id="ch14"><label for="ch14">冰焦糖瑪琪朵</label></td>
+            <td><input type="checkbox" id="ch15"><label for="ch15">巧克力牛奶</label></td>
+            <td><input type="checkbox" id="ch16"><label for="ch16">熱福岡八女抹茶拿鐵</label></td>
+            <td><input type="checkbox" id="ch17"><label for="ch17">冰福岡八女抹茶拿鐵</label></td>
+            <td><input type="checkbox" id="ch18"><label for="ch18">熱北海道風味特調咖啡</label></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit" id="minus13" style="background:green;" onclick="minus13()">-</button>
+                <input type="text" id="count13" value="0"/>
+                <button type="submit" id="add13" style="background:green;" onclick="add13()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus14" style="background:green;" onclick="minus14()">-</button>
+                <input type="text" id="count14" value="0"/>
+                <button type="submit" id="add14" style="background:green;" onclick="add14()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus15" style="background:green;" onclick="minus15()">-</button>
+                <input type="text" id="count15" value="0"/>
+                <button type="submit" id="add15" style="background:green;" onclick="add15()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus16" style="background:green;" onclick="minus16()">-</button>
+                <input type="text" id="count16" value="0"/>
+                <button type="submit" id="add16" style="background:green;" onclick="add16()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus17" style="background:green;" onclick="minus17()">-</button>
+                <input type="text" id="count17" value="0"/>
+                <button type="submit" id="add17" style="background:green;" onclick="add17()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus18" style="background:green;" onclick="minus18()">-</button>
+                <input type="text" id="count18" value="0"/>
+                <button type="submit" id="add18" style="background:green;" onclick="add18()">+</button>
+            </td>
+        </tr>
+
+       
+     
+        <tr>
+            <td><input type="checkbox" id="ch19"><label for="ch19">冰北海道風味特調咖啡</label></td>
+            <td><input type="checkbox" id="ch20"><label for="ch20">熱阿薩姆風味紅茶拿鐵</label></td>
+            <td><input type="checkbox" id="ch21"><label for="ch21">冰阿薩姆風味紅茶拿鐵</label></td>
+            <td><input type="checkbox" id="ch22"><label for="ch22">濃萃拿鐵</label></td>
+           
+        </tr>
+       
+     
+        
+        <tr>
+            <td>
+                <button type="submit" id="minus19" style="background:green;" onclick="minus19()">-</button>
+                <input type="text" id="count19" value="0"/>
+                <button type="submit" id="add19" style="background:green;" onclick="add19()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus20" style="background:green;" onclick="minus20()">-</button>
+                <input type="text" id="count20" value="0"/>
+                <button type="submit" id="add20" style="background:green;" onclick="add20()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus21" style="background:green;" onclick="minus21()">-</button>
+                <input type="text" id="count21" value="0"/>
+                <button type="submit" id="add21" style="background:green;" onclick="add21()">+</button>
+            </td>
+            <td>
+                <button type="submit" id="minus22" style="background:green;" onclick="minus22()">-</button>
+                <input type="text" id="count22" value="0"/>
+                <button type="submit" id="add22" style="background:green;" onclick="add22()">+</button>
+            </td>
+            <td><button type="submit" id="comfirm" style="background:#148df9;width:200px;height:60px;font-size:36px;" onclick="check()">確認</button></td>
+            <td>
+                <button type="submit" id="cancel" style="background:#ff0000;width:200px;height:60px;font-size:36px;" onclick="location.href='cellphone.html'">取消</button>
+            </td>
+        </tr>
+    </table>
+
+    
+    <hr />
+    
+    <img src="image/bg100.png" style="width:150px; height:250px; position:fixed; left:80px ;bottom:0px; z-index:-1;" />
+</body>
+</html>

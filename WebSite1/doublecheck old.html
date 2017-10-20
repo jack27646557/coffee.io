@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.7.5/firebase.js"></script>
+
+    <script src="doublecheck.js"></script>
+
+
+    <style>
+        button[type="submit"] {
+            background: -webkit-linear-gradient(#55acee, #148df9 50%, #55acee);
+            background: linear-gradient(#55acee, #148df9 50%, #55acee);
+            border: 1px solid #0b5394;
+            border-radius: 1000px;
+            padding: 7px 30px;
+            color: #ffffff;
+            display: inline-block;
+            font: normal 400 18px/1 "zenhei", sans-serif;
+            text-align: center;
+            text-shadow: 2px #0b5394;
+        }
+
+        body {
+            background-image: url(image/bg.jpg);
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+
+</head>
+<body align="center">
+    <img src="image/doublecheck.png" style="width:500px; height:150px;" />
+    <hr />
+    會員：<label id="X"></label><br />
+    <!--<input type="text" id="X" style="width:500px;"/>-->
+    <table align="center" id="mytable" class="table table-bordered" style="width:500px; background-color:white;">
+        <tr>
+            <td>品名</td>
+            <td>數量</td>
+        </tr>
+    </table>
+    <!--總金額：$30-->
+    
+    <br />
+    <button type="submit" id="comfirm" onclick="search()">確認</button>
+    <hr />
+    <button type="submit" id="cancel" style="background:#ff0000;" onclick="location.href='choice.html'">返回(修改)</button>
+
+    <button type="submit" id="cancel" style="background:#148df9;" onclick="location.href='login.htm'">結束</button>
+    <img src="image/bg100.png" style="width:150px; height:250px; position:fixed; left:80px ;bottom:0px;" />
+</body>
+</html>
